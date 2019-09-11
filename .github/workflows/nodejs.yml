@@ -21,7 +21,7 @@ jobs:
       env:
         GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         
-    # name: 'GCP List Clusters '
-    - uses: "actions/gcloud/cli@master"
+    - name: 'GCP App Describe'
+      uses: "actions/gcloud/cli@master"
       with:
         args: "app describe --project=twilight-pulsar-46"
