@@ -25,3 +25,8 @@ jobs:
       uses: "actions/gcloud/cli@master"
       with:
         args: "app describe --project=twilight-pulsar-46"
+        
+    - name: 'GCP App Deploy'
+      uses: "actions/gcloud/cli@master"
+      with:
+        args: "app deploy /app.yaml"
