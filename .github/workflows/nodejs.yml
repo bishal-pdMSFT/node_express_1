@@ -9,6 +9,13 @@ jobs:
     # checkout the repo
     - uses: actions/checkout@master
     
+    # install dependencies, build, and test
+    - name: npm install, build, and test
+      run: |
+        npm install
+        npm run build --if-present
+        npm run test --if-present
+        
     - name: authorize-gcloud
       uses: actions/gcloud/auth@master
       env:
@@ -17,6 +24,4 @@ jobs:
     # name: 'GCP List Clusters '
     - uses: "actions/gcloud/cli@master"
       with:
-        args: "container clusters list"
-      env:
-        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
+        args: "app describe --project=twilight-pulsar-46"
