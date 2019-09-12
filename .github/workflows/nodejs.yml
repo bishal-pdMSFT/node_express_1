@@ -21,12 +21,13 @@ jobs:
       env:
         GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
         
-    - name: 'GCP App Describe'
-      uses: "actions/gcloud/cli@master"
-      with:
-        args: "app describe --project=twilight-pulsar-46"
-        
     - name: 'GCP App Deploy'
       uses: "actions/gcloud/cli@master"
       with:
         args: "app deploy --project=twilight-pulsar-46"
+        
+                
+    - name: 'GCP App Browse'
+      uses: "actions/gcloud/cli@master"
+      with:
+        args: "app browse --project=twilight-pulsar-46"
