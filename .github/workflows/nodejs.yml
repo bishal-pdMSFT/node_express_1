@@ -29,4 +29,7 @@ jobs:
                 
     - name: 'GCP App Browse'
       run: |
+          #gcloud auth login actions-demo@twilight-pulsar-46.iam.gserviceaccount.com
+          gcloud config set account `ACCOUNT`
           gcloud app deploy --project=twilight-pulsar-46
+
