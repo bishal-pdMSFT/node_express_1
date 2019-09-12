@@ -32,9 +32,7 @@ jobs:
         pip install awsebcli --upgrade --user
         export PATH=$PATH:$HOME/.local/bin
         eb --version    
-
-    - name: run EB CLI commands to create & deploy a node app
-      run: |
+        # EB CLI commands to create & deploy a node app
         eb init --platform node.js --region us-east-2
         eb create --sample node-express-env
         eb open
