@@ -8,18 +8,26 @@ jobs:
     steps:
     # checkout the repo
     - uses: actions/checkout@master
-    - name: authorize-aws and describe EB applications
-      uses: actions/aws/cli@master
+    #- name: authorize-aws and describe EB applications
+     # uses: actions/aws/cli@master
+     # with:
+     #   args: "elasticbeanstalk describe-applications"
+     # env:
+      #  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+     #   AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      
+    - name: Setup python
+      uses: actions/setup-python@v1
       with:
-        args: "elasticbeanstalk describe-applications"
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        python-version: '3.7'
+        architecture: x64
         
     # install eb cli
     - name: install EB CLI using pip (Python 2.7)
       run: |
         python --version
+        curl -O https://bootstrap.pypa.io/get-pip.py
+        python3 get-pip.py --user
         pip --version
         pip install awsebcli --upgrade --user
         eb --version    
