@@ -35,5 +35,7 @@ jobs:
 
     - name: run EB CLI commands to create & deploy a node app
       run: |
-      eb init --platform node.js --region us-east-2
-      eb create --sample node-express-env
+        eb init --platform node.js --region us-east-2
+        eb create --sample node-express-env
+        eb open
+        eb deploy
