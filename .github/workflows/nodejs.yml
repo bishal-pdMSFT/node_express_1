@@ -32,4 +32,5 @@ jobs:
           #gcloud auth login actions-demo@twilight-pulsar-46.iam.gserviceaccount.com
           gcloud config set account  ${{ secrets.GCLOUD_ACCOUNT }}
           gcloud app deploy --project=twilight-pulsar-46
-
+      env:
+        GCLOUD_AUTH: ${{ secrets.GCLOUD_AUTH }}
