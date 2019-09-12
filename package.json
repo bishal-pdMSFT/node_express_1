@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app"
+    "start": "node server.js"
   },
   "description": "nodejs-webapp-express",
   "author": {
-    "name": "alagrawa"
+    "name": "ushan"
   },
   "dependencies": {
     "applicationinsights": "^1.0.0",
