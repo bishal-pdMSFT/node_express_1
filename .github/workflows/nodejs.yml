@@ -17,12 +17,9 @@ jobs:
         AWS_SECRET_ACCESS_KEY : ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         
     # install eb cli
-    #- name: install EB CLI using pip (Python 2.7)
-     # run: |
-     #   python --version
-      #  pip --version
-     #   pip install awsebcli --upgrade --user
-      #  eb --version    
-        
-  
-
+    - name: install EB CLI using pip (Python 2.7)
+      run: |
+        python --version
+        pip --version
+        pip install awsebcli --upgrade --user
+        eb --version    
