@@ -30,4 +30,5 @@ jobs:
         python3 get-pip.py --user
         pip --version
         pip install awsebcli --upgrade --user
+        export PATH=$PATH:$HOME/.local/bin
         eb --version    
