@@ -26,7 +26,7 @@ jobs:
     #create application
     - uses: actions/aws/cli@master 
       with:
-        args: elasticbeanstalk create-application-version --application-name Node-demo --version-label v0.6 --description NodeAppv1 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-653237029202",S3Key="NodeExpressSampleApp.1.zip"
+        args: elasticbeanstalk create-application-version --application-name Node_demo --version-label v0.1 --description NodeAppv1 --source-bundle S3Bucket="elasticbeanstalk-us-east-2-653237029202",S3Key="NodeExpressSampleApp.1.zip"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
@@ -35,7 +35,7 @@ jobs:
     #deploy elasticbeanstalk
     - uses: actions/aws/cli@master 
       with:
-        args: elasticbeanstalk update-environment --application-name Node-demo --environment-name Ushanode-env --version-label v0.6
+        args: elasticbeanstalk update-environment --application-name Node_demo --environment-name NodeDemo-env --version-label v0.1
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
